@@ -1,14 +1,25 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const router = useRouter();
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+
+  useEffect(() => {
+    try {
+      if (user && sessionStorage.getItem("welcomeToast")) {
+        sessionStorage.removeItem("welcomeToast");
+        toast.success("Login successful! Welcome to Benevia");
+      }
+    } catch {}
+  }, [user]);
 
   async function handleLogout() {
     await authClient.signOut();
@@ -17,7 +28,7 @@ export default function Navbar() {
   }
 
   return (
-   <div className="navbar sticky top-0 z-50 bg-base-100 shadow-sm px-4 md:px-8">
+    <div className="navbar sticky top-0 z-50 bg-base-100 px-4 shadow-sm md:px-8">
       <div className="flex-1">
         <Link href="/" className="text-2xl font-bold text-primary">
           Benevia
@@ -25,6 +36,8 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
+        <ThemeToggle />
+
         <Link href="/events" className="btn btn-ghost">
           Upcoming Events
         </Link>
@@ -47,8 +60,9 @@ export default function Navbar() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+                className="menu dropdown-content z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
               >
+                <li><Link href="/profile">My Profile</Link></li>
                 <li><Link href="/create-event">Create Event</Link></li>
                 <li><Link href="/manage-events">Manage Events</Link></li>
                 <li><Link href="/joined-events">Joined Events</Link></li>
