@@ -17,7 +17,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="navbar bg-base-100 shadow-sm px-4 md:px-8">
+   <div className="navbar sticky top-0 z-50 bg-base-100 shadow-sm px-4 md:px-8">
       <div className="flex-1">
         <Link href="/" className="text-2xl font-bold text-primary">
           Benevia
