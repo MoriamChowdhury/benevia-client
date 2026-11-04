@@ -1,11 +1,15 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
     <footer className="bg-neutral text-neutral-content">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3">
         <div>
-          <h2 className="text-2xl font-bold text-white">Benevia</h2>
+          <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-primary">
+  <Logo />
+  Benevia
+</Link>
           <p className="mt-3 max-w-sm opacity-80">
             A community platform where people create, join and track social
             service events in their local area.
@@ -47,13 +51,31 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-3 text-lg font-semibold text-white">Contact</h3>
-          <ul className="space-y-2 opacity-80">
-            <li>📍 Chattogram, Bangladesh</li>
-            <li>✉️ hello@benevia.org</li>
-            <li>🕘 Sat - Thu, 9:00 AM - 6:00 PM</li>
-          </ul>
-        </div>
+  <h3 className="mb-3 text-lg font-semibold text-white">Contact</h3>
+  <ul className="space-y-3 opacity-80">
+    <li className="flex items-center gap-3">
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </svg>
+      Chattogram, Bangladesh
+    </li>
+    <li className="flex items-center gap-3">
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3 7l9 6 9-6" />
+      </svg>
+      hello@benevia.org
+    </li>
+    <li className="flex items-center gap-3">
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-primary" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </svg>
+      Sat - Thu, 9:00 AM - 6:00 PM
+    </li>
+  </ul>
+</div>
       </div>
 
       <div className="border-t border-neutral-content/20 py-4 text-center text-sm opacity-70">

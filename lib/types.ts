@@ -8,6 +8,7 @@ export interface EventItem {
   eventDate: string;
   creatorEmail: string;
   creatorName: string;
+    participants?: number;
 }
 
 export interface JoinedItem {

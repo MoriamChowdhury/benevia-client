@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { authClient } from "@/lib/auth-client";
 import ThemeToggle from "@/components/ThemeToggle";
+import Logo from "@/components/Logo";
 
 export default function Navbar() {
   const router = useRouter();
@@ -30,9 +31,10 @@ export default function Navbar() {
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 px-4 shadow-sm md:px-8">
       <div className="flex-1">
-        <Link href="/" className="text-2xl font-bold text-primary">
-          Benevia
-        </Link>
+        <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-primary">
+  <Logo />
+  Benevia
+</Link>
       </div>
 
       <div className="flex items-center gap-2">
