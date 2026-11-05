@@ -27,7 +27,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/MoriamChowdhury"
               target="_blank"
               rel="noreferrer"
               aria-label="Benevia on GitHub"
