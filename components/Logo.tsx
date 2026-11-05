@@ -1,6 +1,7 @@
 export default function Logo({ className = "" }: { className?: string }) {
   return (
     <span
+    
       aria-label="Benevia"
       className={`inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-extrabold text-primary-content ${className}`}
     >
