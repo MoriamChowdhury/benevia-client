@@ -1,9 +1,18 @@
 # Benevia
 
-**Live Site:** https://benevia-client.vercel.app
+**Live Site(client):** https://benevia-client.vercel.app
+**Live API(Render):** https://benevia-server.onrender.com/
 
 Benevia is a community-driven platform where people create, join and track social service events in their local area, such as winter clothes distribution, tree plantation drives and cleanups.
 
+## Demo Login
+
+You can use this demo account to explore the app, or register your own account.
+
+- Email: faria@gmail.com
+- Password: Faria12
+
+Google login is also available on the login page.
 ## Key Features
 
 - Email/password and Google authentication with BetterAuth, including password validation (uppercase, lowercase and at least 6 characters)
